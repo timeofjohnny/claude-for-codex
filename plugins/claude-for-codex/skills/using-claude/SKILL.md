@@ -12,7 +12,7 @@ This plugin lets you (Codex) consult **Claude Code** as a peer. Pick the command
 - `/claude-write <task>` — let Claude edit files and report what it changed.
 - `/claude-review [effort]` — run Claude's `/code-review` on the current diff (`--fix` to apply, `--comment` for PR comments).
 - `/claude-research <topic>` — web + MCP research; prioritizes GitHub, then official docs, then Reddit.
-- `/claude-recall [session-id] [question]` — study an existing Claude chat: resume it and get a focused summary (not a full dump).
+- `/claude-recall <name|id> [question]` — study an existing Claude chat. Give the session NAME (as shown in the `--resume` picker) or a UUID; it resolves the name to an id, resumes (forked, read-only), and returns a focused summary — not a full dump.
 
 ## Sessions — continue the EXACT conversation (no mix-ups)
 

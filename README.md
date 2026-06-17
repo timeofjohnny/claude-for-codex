@@ -11,7 +11,7 @@ It adds two slash commands:
 | `/claude-write <request>` | write | let Claude edit files (and verify) |
 | `/claude-review [effort]` | read-only | run Claude Code's `/code-review` on the current diff (add `--fix` to apply) |
 | `/claude-research <topic>` | read-only | web + MCP research; prioritizes GitHub, docs, then Reddit |
-| `/claude-recall [id] [q]` | read-only | resume an existing Claude chat and get a focused summary |
+| `/claude-recall <name\|id> [q]` | read-only | resume an existing Claude chat (by its picker **name** or UUID) and get a focused summary |
 
 Follow-ups continue the **exact** conversation: each thread gets a UUID (`--session-id`), resumed
 later with `--resume <uuid>` — so chats can't be confused with one another.

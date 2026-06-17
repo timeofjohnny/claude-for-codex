@@ -1,6 +1,6 @@
 {
   "name": "claude-for-codex",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Call Claude Code from Codex. Commands: /claude (read-only), /claude-write (edit & verify), /claude-review (/code-review on the diff), /claude-research (web + MCP research), /claude-recall (resume & summarize an existing chat). Continue the exact same conversation via session id.",
   "author": {
     "name": "timeofjohnny"
