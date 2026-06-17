@@ -1,7 +1,7 @@
 {
-  "name": "tim-plugins",
+  "name": "claude-for-codex",
   "interface": {
-    "displayName": "Tim's Local Plugins"
+    "displayName": "Claude for Codex"
   },
   "plugins": [
     {
