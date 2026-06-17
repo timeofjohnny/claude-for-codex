@@ -5,17 +5,20 @@ argument-hint: change to make
 
 Have **Claude Code** carry out this change with write access: $ARGUMENTS
 
-**Session — you decide:** add `--continue` (right after `-p`) to resume the previous Claude
-conversation in this repo when this continues the same task (e.g. "now also do X", "fix the issue
-you just found"). Omit it to start fresh when the task is new or unrelated, the context has shifted
-a lot, there was no prior Claude call here, or the previous call was read-only.
+**Session (zero chance of resuming the wrong chat):** for a NEW thread, mint a UUID and start with
+`--session-id` (echo it so you can reuse it). To CONTINUE that exact thread later (e.g. "now also do
+X", "fix the issue you just found"), use `--resume <that uuid>` — targets the precise conversation,
+never "most recent". (See the `using-claude` skill.)
 
-Run from the repo root. Claude may edit files. Then relay what Claude changed, attributed to Claude
-Code, and add your own judgment separately.
+Run from the repo root. Claude may edit files. Relay what Claude changed, attributed to Claude Code,
+and add your own judgment. If the call exits non-zero or reports a usage/rate limit, report the
+failure instead of treating it as an answer.
 
 ```bash
-# add --continue after -p to resume the last Claude conversation; omit for a fresh one
-claude -p --permission-mode bypassPermissions --model opus \
-  --append-system-prompt "You are Claude Code answering a request from Codex, a peer AI agent. You may read, run commands, and edit files to carry out the request. Make focused edits, avoid destructive commands, and report what you changed. If verification is wanted, run the relevant tests/build/lint." \
+SID=$(uuidgen)   # reuse this uuid to continue this exact thread
+echo "claude session: $SID"
+claude -p --session-id "$SID" --permission-mode bypassPermissions --model opus \
+  --append-system-prompt "You are Claude Code answering a request from Codex, a peer AI agent. You may read, run commands, and edit files to carry out the request. Make focused edits, avoid destructive commands, and report what you changed." \
   "$ARGUMENTS"
+# continue this thread later: claude -p --resume "<the uuid above>" --permission-mode bypassPermissions --model opus "<follow-up>"
 ```
