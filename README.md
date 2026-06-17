@@ -9,6 +9,7 @@ It adds two slash commands:
 |---|---|---|
 | `/claude <request>` | read-only | second opinion, review, research — Claude won't modify anything |
 | `/claude-write <request>` | write | let Claude edit files (and verify) |
+| `/claude-review [effort]` | read-only | run Claude Code's `/code-review` on the current diff (add `--fix` to apply) |
 
 Claude gets the full toolset; read-only is enforced by its system prompt. Run the commands from
 the repo you're working in so Claude sees the code and its MCP servers.
@@ -26,6 +27,7 @@ codex plugin add claude-for-codex@claude-for-codex
 /claude review my staged changes (git diff --staged) for bugs
 /claude is this migration plan sound? <plan>
 /claude-write fix the failing null check in X, then run the tests
+/claude-review high
 ```
 
 ## Requirements

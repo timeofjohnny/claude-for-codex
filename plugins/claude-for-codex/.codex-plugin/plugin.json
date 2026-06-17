@@ -1,7 +1,7 @@
 {
   "name": "claude-for-codex",
-  "version": "0.2.0",
-  "description": "Call Claude Code from Codex. Two commands: /claude (read-only) and /claude-write (edit & verify).",
+  "version": "0.3.0",
+  "description": "Call Claude Code from Codex. Commands: /claude (read-only), /claude-write (edit & verify), /claude-review (run /code-review on the diff).",
   "author": {
     "name": "timeofjohnny"
   },
