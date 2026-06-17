@@ -1,0 +1,20 @@
+{
+  "name": "tim-plugins",
+  "interface": {
+    "displayName": "Tim's Local Plugins"
+  },
+  "plugins": [
+    {
+      "name": "claude-for-codex",
+      "source": {
+        "source": "local",
+        "path": "./plugins/claude-for-codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Engineering"
+    }
+  ]
+}

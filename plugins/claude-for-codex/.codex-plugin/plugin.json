@@ -1,0 +1,20 @@
+{
+  "name": "claude-for-codex",
+  "version": "0.1.0",
+  "description": "Call Claude Code from Codex for a second opinion, code review, research, a diff review, or to make and verify a fix. Read-only by default; --access write lets Claude edit.",
+  "author": {
+    "name": "timeofjohnny"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Claude for Codex",
+    "shortDescription": "Consult Claude Code from Codex (review / research / fix)",
+    "longDescription": "Lets Codex call Claude Code as a peer. You write the request in --prompt; Claude gets the full toolset with no allow/deny list. Read-only by default (Claude is told not to modify); --access write lets it edit and verify. Point --cwd at a repo to give Claude its code and MCP servers.",
+    "developerName": "timeofjohnny",
+    "category": "Engineering",
+    "capabilities": [
+      "Read",
+      "Write"
+    ]
+  }
+}
