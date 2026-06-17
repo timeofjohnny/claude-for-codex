@@ -1,11 +1,12 @@
 {
   "name": "claude-for-codex",
-  "version": "0.4.0",
-  "description": "Call Claude Code from Codex. Commands: /claude (read-only), /claude-write (edit & verify), /claude-review (run /code-review on the diff).",
+  "version": "0.5.0",
+  "description": "Call Claude Code from Codex. Commands: /claude (read-only), /claude-write (edit & verify), /claude-review (/code-review on the diff), /claude-research (web + MCP research).",
   "author": {
     "name": "timeofjohnny"
   },
   "commands": "./commands/",
+  "skills": "./skills/",
   "interface": {
     "displayName": "Claude",
     "shortDescription": "Ask Claude Code from Codex (read or write)",

@@ -7,9 +7,10 @@ It adds two slash commands:
 
 | Command | Mode | Use for |
 |---|---|---|
-| `/claude <request>` | read-only | second opinion, review, research — Claude won't modify anything |
+| `/claude <request>` | read-only | second opinion, question, or quick review — Claude won't modify anything |
 | `/claude-write <request>` | write | let Claude edit files (and verify) |
 | `/claude-review [effort]` | read-only | run Claude Code's `/code-review` on the current diff (add `--fix` to apply) |
+| `/claude-research <topic>` | read-only | web + MCP research; prioritizes GitHub, docs, then Reddit |
 
 Claude gets the full toolset; read-only is enforced by its system prompt. Run the commands from
 the repo you're working in so Claude sees the code and its MCP servers.
@@ -28,6 +29,7 @@ codex plugin add claude-for-codex@claude-for-codex
 /claude is this migration plan sound? <plan>
 /claude-write fix the failing null check in X, then run the tests
 /claude-review high
+/claude-research how to fix <error> with <library> — check GitHub issues and docs
 ```
 
 ## Requirements
